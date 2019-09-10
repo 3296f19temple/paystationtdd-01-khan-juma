@@ -37,7 +37,9 @@ On MacOS if the interface and menu of  NetBeans 8.2 are not working make sure yo
 
 Bradley Juma –  bradleyjuma@me.com
 
-https://github.com/3296f19temple/paystationtdd-01-khan-juma/blob/master/README.md](https://github.com/bradleyjuma/)
+https://github.com/3296f19temple/paystationtdd-01-khan-juma/blob/master/README.md]
+
+(https://github.com/bradleyjuma/)
 
 Saad Khan –  youremail@me.com
 
