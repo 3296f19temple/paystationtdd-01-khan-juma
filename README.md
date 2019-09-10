@@ -9,7 +9,7 @@ This is a functional testing to make sure each fucntion does exactly what it's m
 ```sh
 Open Netbeans 8.2 -> Click Run tab -> Click Run Test File
 ```
-Goal:
+##Goal
 ```sh
 Edit, compile and run JUnit Java code without a Main function.
 Practice test driven development.
@@ -37,7 +37,7 @@ On MacOS if the interface and menu of  NetBeans 8.2 are not working make sure yo
 
 Bradley Juma –  bradleyjuma@me.com
 
-https://github.com/3296f19temple/paystationtdd-01-khan-juma/blob/master/README.md]
+https://github.com/3296f19temple/paystationtdd-01-khan-juma
 
 (https://github.com/bradleyjuma/)
 
