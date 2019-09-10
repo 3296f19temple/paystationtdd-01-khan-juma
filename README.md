@@ -9,7 +9,7 @@ This is a functional testing to make sure each fucntion does exactly what it's m
 ```sh
 Open Netbeans 8.2 -> Click Run tab -> Click Run Test File
 ```
-##Goal
+## Goal
 ```sh
 Edit, compile and run JUnit Java code without a Main function.
 Practice test driven development.
