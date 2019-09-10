@@ -1,4 +1,4 @@
-# paystationtdd-01-khan-juma
+# Paystationtdd-01-khan-juma
 
 # PAYSTATION TTD
 > 
@@ -45,7 +45,7 @@ Bradley Juma –  bradleyjuma@me.com
 
 [https://github.com/bradleyjuma/readme-template](https://github.com/bradleyjuma/)
 
-Saad Khan –  bradleyjuma@me.com
+Saad Khan –  youremail@me.com
 
 
 ## Contributing
