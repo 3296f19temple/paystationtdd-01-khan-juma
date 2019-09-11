@@ -146,7 +146,7 @@ public class PayStationImplTest {
     @Test
     public void isEmpty(){
         PayStation instance = new PayStationImpl();
-        boolean res = instance.empty();
+        int res = instance.empty();
         assertEquals("Empty will reset value", 0, res);
         
     }
