@@ -167,5 +167,18 @@ public class PayStationImplTest {
     @Test 
     public void isCanceled(){
         PayStation instance = new PayStationImpl();
-    }    
+    }
+    
+    /**
+     *
+     */
+    @Test
+    public void testBuy(){
+        PayStation instance = new PayStationImpl();
+        
+        
+    }
+    
+    
+    
 }
