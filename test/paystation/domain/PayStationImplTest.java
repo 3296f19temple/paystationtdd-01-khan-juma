@@ -179,6 +179,10 @@ public class PayStationImplTest {
         
     }
     
-    
+    @Test
+    public void testAdd(){
+        PayStation instance = new PayStationImpl();
+        
+    }
     
 }
