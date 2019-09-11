@@ -154,9 +154,18 @@ public class PayStationImplTest {
     /**
      *
      */
-    @Test public void testDisplay(){
+    @Test 
+    public void testDisplay(){
+        PayStation instance = new PayStationImpl();
         
         
     }
     
+    /**
+     *
+     */
+    @Test 
+    public void isCanceled(){
+        PayStation instance = new PayStationImpl();
+    }    
 }
