@@ -60,7 +60,7 @@ public class PayStationImpl implements PayStation {
     }
     
     @Override
-    public int empty(){
-        return (insertedSoFar = 0);
+    public boolean empty(){
+        return (insertedSoFar == 1);
     }
 }
