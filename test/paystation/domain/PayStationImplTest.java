@@ -126,6 +126,7 @@ public class PayStationImplTest {
 
     /**
      * Verify that cancel clears the pay station
+     * @throws paystation.domain.IllegalCoinException
      */
     @Test
     public void shouldClearAfterCancel()
@@ -137,5 +138,16 @@ public class PayStationImplTest {
         ps.addPayment(25);
         assertEquals("Insert after cancel should work",
                 10, ps.readDisplay());
+    }
+    
+    /**
+     *
+     */
+    @Test
+    public void isEmpty(){
+        PayStation instance = new PayStationImpl();
+        boolean res = instance.empty();
+        assertEquals("Empty will reset value", 0, res);
+        
     }
 }
