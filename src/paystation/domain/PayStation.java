@@ -51,5 +51,5 @@ public interface PayStation {
      */
     public void cancel();
     
-    public boolean empty();   
+    public int empty();   
 }
