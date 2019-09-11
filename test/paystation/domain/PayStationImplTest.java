@@ -151,4 +151,12 @@ public class PayStationImplTest {
         assertEquals("Empty will reset value", 0, myInt);
         
     }
+    /**
+     *
+     */
+    @Test public void testDisplay(){
+        
+        
+    }
+    
 }
