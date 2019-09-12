@@ -49,7 +49,7 @@ public interface PayStation {
     /**
      * Cancel the present transaction. Resets the machine for a new transaction.
      */
-    public void cancel();
+    public Map<Integer, Integer> cancel(); 
     
     public int empty();   
 }
