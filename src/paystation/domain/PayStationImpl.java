@@ -23,6 +23,11 @@ public class PayStationImpl implements PayStation {
     
     private int insertedSoFar;
     private int timeBought;
+    private int totalMoney;
+    private int numNickels = 0;
+    private int numDimes = 0;
+    private int numQuarters = 0;
+    private Map<Integer, Integer> coinCount = new HashMap<>();
 
     @Override
     public void addPayment(int coinValue)
