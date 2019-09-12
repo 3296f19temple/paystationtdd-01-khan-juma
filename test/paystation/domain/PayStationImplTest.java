@@ -146,17 +146,21 @@ public class PayStationImplTest {
     @Test
     public void isEmpty(){
         PayStation instance = new PayStationImpl();
-        boolean res = instance.empty();
-        int myInt = res ? 1 : 0;
-        assertEquals("Empty will reset value", 0, myInt);
+        int res = instance.empty();
+        //int myInt = res ? 1 : 0;
+        assertEquals("Empty will reset value", 0, res);
         
     }
     /**
      *
      */
     @Test 
-    public void testDisplay(){
+    public void testDisplay()
+    throws IllegalCoinException {
         PayStation instance = new PayStationImpl();
+        int res = 0;
+        int ress = instance.readDisplay();
+        assertEquals(res,ress);
         
         
     }
@@ -179,6 +183,9 @@ public class PayStationImplTest {
         
     }
     
+    /**
+     *
+     */
     @Test
     public void testAdd(){
         PayStation instance = new PayStationImpl();
