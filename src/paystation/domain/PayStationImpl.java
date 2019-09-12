@@ -64,7 +64,10 @@ public class PayStationImpl implements PayStation {
 
     @Override
     public void cancel() {
+        HashMap<Integer, Integer> tempMap = new HashMap<>();
+        tempMap.putAll(coinCount);
         reset();
+        return tempMap;
     }
     
     private void reset() {
