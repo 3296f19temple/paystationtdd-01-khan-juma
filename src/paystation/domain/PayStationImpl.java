@@ -72,6 +72,7 @@ public class PayStationImpl implements PayStation {
     
     private void reset() {
         timeBought = insertedSoFar = 0;
+        coinCount.clear();
     }
     
     @Override
