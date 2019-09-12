@@ -44,7 +44,9 @@ https://github.com/3296f19temple/paystationtdd-01-khan-juma
 
 (https://github.com/bradleyjuma/)
 
-Saad Khan –  youremail@me.com
+Saad Khan –  saadkhan12313@yahoo.com
+
+(https://github.com/saad-khannn)
 
 
 ## Contributing
