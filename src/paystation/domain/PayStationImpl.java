@@ -33,9 +33,15 @@ public class PayStationImpl implements PayStation {
     public void addPayment(int coinValue)
             throws IllegalCoinException {
         switch (coinValue) {
-            case 5: break;
-            case 10: break;
-            case 25: break;
+            case 5: 
+                coinCount.put(5, numNickels);
+                break;
+            case 10: 
+                coinCount.put(10, numDimes);
+                break;
+            case 25: 
+                coinCount.put(25, numQuarters);
+                break;
             default:
                 throw new IllegalCoinException("Invalid coin: " + coinValue);
         }
