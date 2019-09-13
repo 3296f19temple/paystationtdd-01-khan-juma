@@ -1,5 +1,7 @@
 package paystation.domain;
 
+import java.util.*;
+
 /**
  * Implementation of the pay station.
  *
