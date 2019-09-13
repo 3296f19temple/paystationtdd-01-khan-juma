@@ -19,6 +19,8 @@
  */
 package paystation.domain;
 
+import java.util.*;
+
 public interface PayStation {
 
     /**
