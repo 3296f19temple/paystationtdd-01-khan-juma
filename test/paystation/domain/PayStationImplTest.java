@@ -30,7 +30,7 @@ public class PayStationImplTest {
     @Test
     public void shouldDisplay2MinFor5Cents()
             throws IllegalCoinException {
-        ps.addPayment(5);
+        ps.addPay(5);
         assertEquals("Should display 2 min for 5 cents",
                 2, ps.readDisplay());
     }
@@ -40,7 +40,7 @@ public class PayStationImplTest {
      */
     @Test
     public void shouldDisplay10MinFor25Cents() throws IllegalCoinException {
-        ps.addPayment(25);
+        ps.addPay(25);
         assertEquals("Should display 10 min for 25 cents",
                 10, ps.readDisplay());
     }
@@ -50,7 +50,7 @@ public class PayStationImplTest {
      */
     @Test(expected = IllegalCoinException.class)
     public void shouldRejectIllegalCoin() throws IllegalCoinException {
-        ps.addPayment(17);
+        ps.addPay(17);
     }
 
     /**
@@ -59,8 +59,8 @@ public class PayStationImplTest {
     @Test
     public void shouldDisplay14MinFor10And25Cents()
             throws IllegalCoinException {
-        ps.addPayment(10);
-        ps.addPayment(25);
+        ps.addPay(10);
+        ps.addPay(25);
         assertEquals("Should display 14 min for 10+25 cents",
                 14, ps.readDisplay());
     }
@@ -71,9 +71,9 @@ public class PayStationImplTest {
     @Test
     public void shouldReturnCorrectReceiptWhenBuy()
             throws IllegalCoinException {
-        ps.addPayment(5);
-        ps.addPayment(10);
-        ps.addPayment(25);
+        ps.addPay(5);
+        ps.addPay(10);
+        ps.addPay(25);
         Receipt receipt;
         receipt = ps.buy();
         assertNotNull("Receipt reference cannot be null",
@@ -88,13 +88,13 @@ public class PayStationImplTest {
     @Test
     public void shouldReturnReceiptWhenBuy100c()
             throws IllegalCoinException {
-        ps.addPayment(10);
-        ps.addPayment(10);
-        ps.addPayment(10);
-        ps.addPayment(10);
-        ps.addPayment(10);
-        ps.addPayment(25);
-        ps.addPayment(25);
+        ps.addPay(10);
+        ps.addPay(10);
+        ps.addPay(10);
+        ps.addPay(10);
+        ps.addPay(10);
+        ps.addPay(25);
+        ps.addPay(25);
 
         Receipt receipt;
         receipt = ps.buy();
@@ -107,14 +107,14 @@ public class PayStationImplTest {
     @Test
     public void shouldClearAfterBuy()
             throws IllegalCoinException {
-        ps.addPayment(25);
+        ps.addPay(25);
         ps.buy(); // I do not care about the result
         // verify that the display reads 0
         assertEquals("Display should have been cleared",
                 0, ps.readDisplay());
         // verify that a following buy scenario behaves properly
-        ps.addPayment(10);
-        ps.addPayment(25);
+        ps.addPay(10);
+        ps.addPay(25);
         assertEquals("Next add payment should display correct time",
                 14, ps.readDisplay());
         Receipt r = ps.buy();
@@ -131,11 +131,11 @@ public class PayStationImplTest {
     @Test
     public void shouldClearAfterCancel()
             throws IllegalCoinException {
-        ps.addPayment(10);
+        ps.addPay(10);
         ps.cancel();
         assertEquals("Cancel should clear display",
                 0, ps.readDisplay());
-        ps.addPayment(25);
+        ps.addPay(25);
         assertEquals("Insert after cancel should work",
                 10, ps.readDisplay());
     }
@@ -144,7 +144,7 @@ public class PayStationImplTest {
      *
      */
     @Test
-    public void isEmpty(){
+    public void empty(){
         PayStation instance = new PayStationImpl();
         int res = instance.empty();
         //int myInt = res ? 1 : 0;
@@ -157,11 +157,7 @@ public class PayStationImplTest {
     @Test 
     public void testDisplay()
     throws IllegalCoinException {
-        PayStation instance = new PayStationImpl();
-        int res = 0;
-        int ress = instance.readDisplay();
-        assertEquals(res,ress);
-        
+        PayStation instance = new PayStationImpl();   
         
     }
     
