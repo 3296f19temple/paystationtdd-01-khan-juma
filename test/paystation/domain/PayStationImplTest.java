@@ -160,12 +160,21 @@ public class PayStationImplTest {
         
     }
     
-     /**
+    /**
      * Verify the machine's display, the display will be numerical description of
      * the amount of parking time accumulated so far.
      */
     @Test
     public void readDisplay(){
+        
+        
+    }
+    
+    /**
+     * Verify Buy parking time. Terminate the ongoing transaction and return a parking
+     */
+    @Test
+    public void buy(){
         
         
     }
