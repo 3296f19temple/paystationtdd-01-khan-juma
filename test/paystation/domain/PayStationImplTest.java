@@ -140,7 +140,7 @@ public class PayStationImplTest {
                 10, ps.readDisplay());
     }
     
-   /**
+    /**
      * Call to empty returns the total amount entered.
      */
     @Test
@@ -153,5 +153,22 @@ public class PayStationImplTest {
         ps.buy();
         assertEquals("Return 45 and then empty",
                 45, ps.empty());
+    }
+        @Test
+    public void cancelDoesNotAddToEmpty()
+        throws IllegalCoinException {
+        ps.addPayment(5);
+        ps.addPayment(5);
+        ps.addPayment(5);
+        ps.addPayment(10);
+        ps.addPayment(10);
+        ps.addPayment(25);
+        ps.buy();
+        ps.addPayment(5);
+        ps.addPayment(10);
+        ps.addPayment(25);
+        ps.cancel();
+        assertEquals("Return 60 and then empty",
+                     61, ps.empty());
     }
 }
