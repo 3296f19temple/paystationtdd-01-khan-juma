@@ -169,6 +169,6 @@ public class PayStationImplTest {
         ps.addPayment(25);
         ps.cancel();
         assertEquals("Return 60 and then empty",
-                     61, ps.empty());
+                     60, ps.empty());
     }
 }
