@@ -140,50 +140,17 @@ public class PayStationImplTest {
                 10, ps.readDisplay());
     }
     
-    /**
-     *
+   /**
+     * Call to empty returns the total amount entered.
      */
     @Test
-    public void isEmpty(){
-        PayStation instance = new PayStationImpl();
-        int res = instance.empty();
-        assertEquals("Empty will reset value", 0, res);
-        
+    public void emptyReturnsAmountEntered()
+            throws IllegalCoinException {
+        ps.addPayment(5);
+        ps.addPayment(5);
+        ps.addPayment(10);
+        ps.addPayment(25);
+        ps.buy();
+        assertEquals("Return 45 and then empty",
+                45, ps.empty());
     }
-    
-    /**
-     *  Verify the addPayment and throws an IllegalCoinException
-     * in case coinValue is invalid.
-     */
-    @Test  
-    public void addPayment(){
-        
-    }
-    
-    /**
-     * Verify the machine's display, the display will be numerical description of
-     * the amount of parking time accumulated so far.
-     */
-    @Test
-    public void readDisplay(){
-        
-        
-    }
-    
-    /**
-     * Verify Buy parking time. Terminate the ongoing transaction and return a parking
-     */
-    @Test
-    public void buy(){
-        
-        
-    }
-    
-    /**
-     * Verify the present transaction.
-     */
-    @Test
-    public void cancel(){
-        
-    }
-}
