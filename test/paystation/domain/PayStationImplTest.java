@@ -178,4 +178,12 @@ public class PayStationImplTest {
         
         
     }
+    
+    /**
+     * Verify the present transaction.
+     */
+    @Test
+    public void cancel(){
+        
+    }
 }
