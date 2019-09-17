@@ -42,7 +42,7 @@ public class PayStationImplTest {
     public void shouldDisplay10MinFor25Cents() throws IllegalCoinException {
         ps.addPayment(25);
         assertEquals("Should display 10 min for 25 cents",
-                10, ps.readDisplay());
+                5, ps.readDisplay());
     }
 
     /**
