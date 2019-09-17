@@ -152,11 +152,21 @@ public class PayStationImplTest {
     }
     
     /**
-     *  Verify the addPaymentn and throws an IllegalCoinException
+     *  Verify the addPayment and throws an IllegalCoinException
      * in case coinValue is invalid.
      */
     @Test  
     public void addPayment(){
+        
+    }
+    
+     /**
+     * Verify the machine's display, the display will be numerical description of
+     * the amount of parking time accumulated so far.
+     */
+    @Test
+    public void readDisplay(){
+        
         
     }
 }
