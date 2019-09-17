@@ -185,11 +185,11 @@ public class PayStationImplTest {
         ps.addPayment(25);
         ps.buy();
         assertEquals("Return 25 and then empty",
-                24, ps.empty());
+                25, ps.empty());
         ps.addPayment(25);
         ps.buy();
         ps.empty();
         assertEquals("Return 0",
-                1, ps.empty());
+                0, ps.empty());
     }
 }
