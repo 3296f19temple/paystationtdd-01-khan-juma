@@ -152,7 +152,8 @@ public class PayStationImplTest {
     }
     
     /**
-     *
+     *  Verify the addPaymentn and throws an IllegalCoinException
+     * in case coinValue is invalid.
      */
     @Test  
     public void addPayment(){
