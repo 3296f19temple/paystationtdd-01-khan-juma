@@ -261,6 +261,7 @@ public class PayStationImplTest {
         ps.addPayment(5);
         ps.addPayment(10);
         ps.addPayment(25);
+        ps.buy();
         Map total = ps.cancel();
         Map clearMap = new HashMap<>();
         assertEquals(total, clearMap);
