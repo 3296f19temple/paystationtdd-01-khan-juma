@@ -197,6 +197,18 @@ public class PayStationImplTest {
     }
     
     /*
+    * Call to cancel returns a map containing one coin entered.
+    */
+    @Test
+    public void cancelReturnsOneCoinMap()
+            throws IllegalCoinException {
+        ps.addPayment(5);
+        Map<Integer,Integer> test = new HashMap<>();
+        test = ps.cancel();
+        assertTrue(test.containsKey(5));
+    }
+    
+    /*
      * Call to cancel returns a map containing a mixture of coins entered.
      */
     @Test
