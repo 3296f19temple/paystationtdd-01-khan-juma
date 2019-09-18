@@ -211,5 +211,18 @@ public class PayStationImplTest {
         assertTrue(test.containsKey(10));
         assertTrue(test.containsKey(25));
     }
+    
+     /*
+     * Call to cancel returns a map that does not contain a key for a coin not entered.
+     */
+    @Test
+    public void cancelMapKey()
+    throws IllegalCoinException {
+        ps.addPayment(10);
+        ps.addPayment(25);
+        Map<Integer,Integer> test = new HashMap<>();
+        test = ps.cancel();
+        assertFalse(test.containsKey(10));
+    }
 
 }
