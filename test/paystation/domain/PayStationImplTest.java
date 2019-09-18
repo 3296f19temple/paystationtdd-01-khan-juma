@@ -236,5 +236,19 @@ public class PayStationImplTest {
         test = ps.cancel();
         assertFalse(test.containsKey(15));
     }
+    
+     /*
+    * Call to cancel clears the map.
+    */
+    @Test
+    public void cancelClearsMap()
+            throws IllegalCoinException {
+        ps.addPayment(5);
+        ps.addPayment(10);
+        ps.addPayment(25);
+        Map total = ps.cancel();
+        Map clearMap = new HashMap<>();
+        assertEquals(total, clearMap);
+    }
 
 }
