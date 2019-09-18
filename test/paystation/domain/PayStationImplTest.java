@@ -205,7 +205,7 @@ public class PayStationImplTest {
         ps.addPayment(5);
         Map<Integer,Integer> test = new HashMap<>();
         test = ps.cancel();
-        assertTrue(test.containsKey(6));
+        assertTrue(test.containsKey(5));
     }
     
     /*
