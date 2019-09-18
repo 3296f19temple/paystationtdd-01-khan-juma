@@ -32,7 +32,7 @@ public class PayStationImpl implements PayStation {
     private Map<Integer, Integer> coinCount = new HashMap<>();
 
     @Override
-    public void addPayment(int coinValue)
+    public void addPay(int coinValue)
             throws IllegalCoinException {
         switch (coinValue) {
             case 5: 
