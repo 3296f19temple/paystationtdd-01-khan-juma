@@ -84,6 +84,7 @@ Saad Khan: Firstly, I updated the methods in PayStationImpl.java and added instr
 Then, I created, added, and tested about half of the new test cases in PayStationImplTest.java. 
 Lastly, I updated README.md and added the Requirements section.
 
+Bradley Juma: I first started the project with the README.md, adding information about how to build, and run the testing. I followed along and clone the project, and began working on the tests given to get an idea of what's needed to be done along with communicating with Saad over Skype so we're both on the same page. I continued on, implemented some of the cases in the requirements sheet, and then did a final refactoring check on the important function used during testing.
 
 
 
