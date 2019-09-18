@@ -32,7 +32,7 @@ public class PayStationImplTest {
     @Test
     public void shouldDisplay2MinFor5Cents()
             throws IllegalCoinException {
-        ps.addPayment(5);
+        ps.addPay(5);
         assertEquals("Should display 2 min for 5 cents",
                 2, ps.readDisplay());
     }
@@ -42,7 +42,7 @@ public class PayStationImplTest {
      */
     @Test
     public void shouldDisplay10MinFor25Cents() throws IllegalCoinException {
-        ps.addPayment(25);
+        ps.addPay(25);
         assertEquals("Should display 10 min for 25 cents",
                 10, ps.readDisplay());
     }
@@ -52,7 +52,7 @@ public class PayStationImplTest {
      */
     @Test(expected = IllegalCoinException.class)
     public void shouldRejectIllegalCoin() throws IllegalCoinException {
-        ps.addPayment(17);
+        ps.addPay(17);
     }
 
     /**
@@ -61,8 +61,8 @@ public class PayStationImplTest {
     @Test
     public void shouldDisplay14MinFor10And25Cents()
             throws IllegalCoinException {
-        ps.addPayment(10);
-        ps.addPayment(25);
+        ps.addPay(10);
+        ps.addPay(25);
         assertEquals("Should display 14 min for 10+25 cents",
                 14, ps.readDisplay());
     }
@@ -73,9 +73,9 @@ public class PayStationImplTest {
     @Test
     public void shouldReturnCorrectReceiptWhenBuy()
             throws IllegalCoinException {
-        ps.addPayment(5);
-        ps.addPayment(10);
-        ps.addPayment(25);
+        ps.addPay(5);
+        ps.addPay(10);
+        ps.addPay(25);
         Receipt receipt;
         receipt = ps.buy();
         assertNotNull("Receipt reference cannot be null",
@@ -90,13 +90,13 @@ public class PayStationImplTest {
     @Test
     public void shouldReturnReceiptWhenBuy100c()
             throws IllegalCoinException {
-        ps.addPayment(10);
-        ps.addPayment(10);
-        ps.addPayment(10);
-        ps.addPayment(10);
-        ps.addPayment(10);
-        ps.addPayment(25);
-        ps.addPayment(25);
+        ps.addPay(10);
+        ps.addPay(10);
+        ps.addPay(10);
+        ps.addPay(10);
+        ps.addPay(10);
+        ps.addPay(25);
+        ps.addPay(25);
 
         Receipt receipt;
         receipt = ps.buy();
@@ -109,14 +109,14 @@ public class PayStationImplTest {
     @Test
     public void shouldClearAfterBuy()
             throws IllegalCoinException {
-        ps.addPayment(25);
+        ps.addPay(25);
         ps.buy(); // I do not care about the result
         // verify that the display reads 0
         assertEquals("Display should have been cleared",
                 0, ps.readDisplay());
         // verify that a following buy scenario behaves properly
-        ps.addPayment(10);
-        ps.addPayment(25);
+        ps.addPay(10);
+        ps.addPay(25);
         assertEquals("Next add payment should display correct time",
                 14, ps.readDisplay());
         Receipt r = ps.buy();
@@ -133,11 +133,11 @@ public class PayStationImplTest {
     @Test
     public void shouldClearAfterCancel()
             throws IllegalCoinException {
-        ps.addPayment(10);
+        ps.addPay(10);
         ps.cancel();
         assertEquals("Cancel should clear display",
                 0, ps.readDisplay());
-        ps.addPayment(25);
+        ps.addPay(25);
         assertEquals("Insert after cancel should work",
                 10, ps.readDisplay());
     }
@@ -148,10 +148,10 @@ public class PayStationImplTest {
     @Test
     public void emptyReturnsAmountEntered()
             throws IllegalCoinException {
-        ps.addPayment(5);
-        ps.addPayment(5);
-        ps.addPayment(10);
-        ps.addPayment(25);
+        ps.addPay(5);
+        ps.addPay(5);
+        ps.addPay(10);
+        ps.addPay(25);
         ps.buy();
         assertEquals("Return 45 and then empty",
                 45, ps.empty());
@@ -164,16 +164,16 @@ public class PayStationImplTest {
     @Test
     public void cancelDoesNotAddToEmpty()
             throws IllegalCoinException {
-        ps.addPayment(5);
-        ps.addPayment(5);
-        ps.addPayment(5);
-        ps.addPayment(10);
-        ps.addPayment(10);
-        ps.addPayment(25);
+        ps.addPay(5);
+        ps.addPay(5);
+        ps.addPay(5);
+        ps.addPay(10);
+        ps.addPay(10);
+        ps.addPay(25);
         ps.buy();
-        ps.addPayment(5);
-        ps.addPayment(10);
-        ps.addPayment(25);
+        ps.addPay(5);
+        ps.addPay(10);
+        ps.addPay(25);
         ps.cancel();
         assertEquals("Return 60 and then empty",
                      60, ps.empty());
@@ -185,11 +185,11 @@ public class PayStationImplTest {
     @Test
     public void emptyResetsZero()
             throws IllegalCoinException {
-        ps.addPayment(25);
+        ps.addPay(25);
         ps.buy();
         assertEquals("Return 25 and then empty",
                 25, ps.empty());
-        ps.addPayment(25);
+        ps.addPay(25);
         ps.buy();
         ps.empty();
         assertEquals("Return 0",
@@ -202,7 +202,7 @@ public class PayStationImplTest {
     @Test
     public void cancelReturnsOneCoinMap()
             throws IllegalCoinException {
-        ps.addPayment(5);
+        ps.addPay(5);
         Map<Integer,Integer> test = new HashMap<>();
         test = ps.cancel();
         assertTrue(test.containsKey(5));
@@ -214,9 +214,9 @@ public class PayStationImplTest {
     @Test
     public void cancelReturnsMultipleCoinMap()
     throws IllegalCoinException {
-        ps.addPayment(5);
-        ps.addPayment(10);
-        ps.addPayment(25);
+        ps.addPay(5);
+        ps.addPay(10);
+        ps.addPay(25);
         Map<Integer,Integer> test = new HashMap<>();
         test = ps.cancel();
         assertTrue(test.containsKey(5));
@@ -230,8 +230,8 @@ public class PayStationImplTest {
     @Test
     public void cancelMapKey()
     throws IllegalCoinException {
-        ps.addPayment(10);
-        ps.addPayment(25);
+        ps.addPay(10);
+        ps.addPay(25);
         Map<Integer,Integer> test = new HashMap<>();
         test = ps.cancel();
         assertFalse(test.containsKey(15));
@@ -243,9 +243,9 @@ public class PayStationImplTest {
     @Test
     public void cancelClearsMap()
             throws IllegalCoinException {
-        ps.addPayment(5);
-        ps.addPayment(10);
-        ps.addPayment(25);
+        ps.addPay(5);
+        ps.addPay(10);
+        ps.addPay(25);
         ps.cancel();
         Map total = ps.cancel();
         Map clearMap = new HashMap<>();
@@ -258,9 +258,9 @@ public class PayStationImplTest {
     @Test
     public void buyClearsMap()
             throws IllegalCoinException {
-        ps.addPayment(5);
-        ps.addPayment(10);
-        ps.addPayment(25);
+        ps.addPay(5);
+        ps.addPay(10);
+        ps.addPay(25);
         ps.buy();
         Map total = ps.cancel();
         Map clearMap = new HashMap<>();
