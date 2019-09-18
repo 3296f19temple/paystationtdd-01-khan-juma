@@ -251,5 +251,19 @@ public class PayStationImplTest {
         Map clearMap = new HashMap<>();
         assertEquals(total, clearMap);
     }
+    
+    /*
+    * Call to buy clears the map.
+    */
+    @Test
+    public void buyClearsMap()
+            throws IllegalCoinException {
+        ps.addPayment(5);
+        ps.addPayment(10);
+        ps.addPayment(25);
+        Map total = ps.cancel();
+        Map clearMap = new HashMap<>();
+        assertEquals(total, clearMap);
+    }
 
 }
