@@ -80,9 +80,13 @@ test-driven development.
 
 ## Team
 
-Saad Khan: Firstly, I updated the methods in PayStationImpl.java and added instructions to them.
-Then, I created, added, and tested about half of the new test cases in PayStationImplTest.java. 
-Lastly, I updated README.md and added the Requirements section.
+Saad Khan: Firstly, I updated the methods in PayStationImpl.java, adding instructions to them and 
+ensuring that they functioned as intended.
+Then, I added added about half of the new test cases to PayStationImplTest.java, checking that the tests failed
+before writing and fixing code to ensure that the final version of the tests passed. 
+Lastly, I updated README.md and added the Requirements section, answering important questions regarding the assignment.
+I communicated with Bradley through Skype calls so that we both knew which tasks we were responsible for
+and so that we did not do any overlapping work which would cause us to waste time in the assignment. 
 
 Bradley Juma: I first started the project with the README.md, adding information about how to build, and run the testing. I followed along and clone the project, and began working on the tests given to get an idea of what's needed to be done along with communicating with Saad over Skype so we're both on the same page. I continued on, implemented some of the cases in the requirements sheet, and then did a final refactoring check on the important function used during testing.
 
