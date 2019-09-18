@@ -30,7 +30,7 @@ public interface PayStation {
      * is, a quarter is coinValue=25, etc.
      * @throws IllegalCoinException in case coinValue is not a valid coin value
      */
-    public void addPayment(int coinValue) throws IllegalCoinException;
+    public void addPay(int coinValue) throws IllegalCoinException;
 
     /**
      * Read the machine's display. The display shows a numerical description of
